@@ -38,31 +38,53 @@ body{
     width: auto;
     margin-top: 75px;
 }
-.formulario__datos{
+
+.input-container {
     display: flex;
-    height: 70vh;
-    width: auto;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin:20px;
-    
-}
-.formulario__datos input{
     margin: 20px;
-    border-radius: 15px;
-    height: 7vh;
+  }
+  
+  .input-wrapper {
+    position: relative;
+    flex: 1;
+    height: 70vh;
     width: 25vw;
-    border: 1px solid rgb(182, 182, 182);
-    
-}
-.formulario__datos input:hover{
-    border-color: rgb(37, 37, 37);
-}
-.formulario__datos input::placeholder{
-    font-size: 15px;
+    margin: 20px;
+  }
+  
+  .input-field {
     padding: 10px;
-}
+    font-size: 16px;
+    border: 1px solid #999;
+    outline: none;
+    border-radius: 15px;
+    width: 100%;
+    border: 1px solid rgb(41, 41, 41);
+  }
+  
+  .input-label {
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s ease-out;
+    color: #999;
+    background-color: white;
+    padding: 0 5px;
+
+  }
+  
+  .input-field:focus ~ .input-label,
+  .input-field:valid ~ .input-label {
+    top: -10px;
+    transform: translateY(0%);
+    font-size: 12px;
+    color: #333;
+    font-weight: bold;
+    
+  }
 .botones{
     display: flex;
     justify-content: center;

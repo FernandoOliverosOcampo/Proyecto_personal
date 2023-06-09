@@ -1,5 +1,5 @@
 // Importaciones
-import { registrate, redirigirPagina, paginaRegistro } from "./registros.js";
+
 
 // DOM
 export const usuario = document.getElementById("usuario");
@@ -9,12 +9,13 @@ const boton_registro = document.getElementById("btn_registro");
 
 //EVENTOS
 boton_ingreso.addEventListener('click', () => {
-    redirigirPagina();
-//   
+  window.location.href = "../paginas/principal.html";
+   
 });
 
 boton_registro.addEventListener('click', () => {
-   paginaRegistro();
+   
+   window.location.href = "../paginas/registro_datos.html";
  
  });
  

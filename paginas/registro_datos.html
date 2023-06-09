@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/registro_datos.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principal</title>
+    <title>Registro de datos</title>
 </head>
+
 <body>
     <div class="container">
         <div class="formulario">
             <div class="imagen">
                 <img class="imagen__formulario" src="../imagenes/user_profile.jpg" alt="Imagen del formulario">
             </div>
-            <div class="formulario__datos">
-                <input type="text" id="nombre" placeholder="Nombre">
-                <input type="text" id="telefono" placeholder="Telefono">
-                <input type="text" id="usuario" placeholder="Usuario">
-                <input type="text" id="contraseña" placeholder="Contraseña">
-            </div>
+            <div class="input-container">
+                <div class="input-wrapper">
+                  <input id="nombre" type="text" class="input-field" required>
+                  <label for="input1" class="input-label">Nombre</label>
+                </div>
+                <div class="input-wrapper">
+                  <input id="apellido" type="text" class="input-field" required>
+                  <label for="input2" class="input-label">Apellido</label>
+                </div>
+                <div class="input-wrapper">
+                  <input id="usuario" type="text" class="input-field" required>
+                  <label for="input3" class="input-label">Usuario</label>
+                </div>
+                <div class="input-wrapper">
+                  <input id="contraseña" type="password" class="input-field" required>
+                  <label for="input4" class="input-label">Contraseña</label>
+                </div>
+              </div>
             <div class="botones">
                 <button id="btn_enviar">Enviar</button>
                 <button id="btn_volver">Volver</button>
             </div>
         </div>
     </div>
+    <script src="../js/vistajs/registro_datos_vista.js" type="module"></script>
+    
 </body>
+
 </html>
