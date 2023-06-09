@@ -9,13 +9,13 @@ const boton_registro = document.getElementById("btn_registro");
 
 //EVENTOS
 boton_ingreso.addEventListener('click', () => {
-  window.location.href = "../paginas/principal.html";
+  window.location.href = "./paginas/principal.html";
    
 });
 
 boton_registro.addEventListener('click', () => {
    
-   window.location.href = "../paginas/registro_datos.html";
+   window.location.href = "./paginas/registro_datos.html";
  
  });
  
