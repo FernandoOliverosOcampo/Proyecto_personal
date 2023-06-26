@@ -1,38 +1,24 @@
-import { nombre,apellido,usuario,contraseña} from "../vistajs/registro_datos_vista.js";
-
+import Vista from "../vistajs/registro_datos_vista.js";
+import Modelo from '../modelo/modelo_registro.js';
 
 //Funcion volver
-export const volver = ()=>{
-    window.location.href = "../index.html";
-}
 
-const registro = [];
-export const registrate = ()=>{
-    const nombreValor = nombre.value;
-    const apellidoValor = apellido.value; 
-    const usuarioValor = usuario.value;
-    const contraseñaValor = contraseña.value;
+const Controlador ={
+ 
+    async contenidoAgregar(nombreFormulario, apellidoFormulario, usuarioFormulario,contraseñaFormulario){
+        try {
+            const res = await Modelo.insertarDatos(nombreFormulario, apellidoFormulario, usuarioFormulario,contraseñaFormulario);
+            let mensaje = "Los datos fueron insertados correctamente"
+            Vista.mostrarAlertaSatisfactorio(mensaje);
 
-    const datos = {
-        nombre: nombreValor,
-        apellido: apellidoValor,
-        usuario: usuarioValor,
-        contraseña: contraseñaValor
-    };
-
-    const llenarDatos = () => {
-        if (datos.nombre.length === 0 || !datos.nombre.match(/[a-zA-Z]/) || datos.apellido.length === 0 || !datos.apellido.match(/[a-zA-Z]/)|| datos.usuario.length === 0 || !datos.usuario.match(/[a-zA-Z]/)|| datos.contraseña.length === 0 || !datos.contraseña.match(/[a-zA-Z]/)){
-            alert("Asegurese de llenar los datos con valores correctos");
-            console.error("Esta fallando algo")
-        } else {
-            registro.push(nombreValor, apellidoValor, usuarioValor, contraseñaValor);
-            alert("datos ingresados correctamente");
-            nombre.value=" ";
-            apellido.value="";
-            usuario.value = "";
-            contraseña.value = "";
-            console.log(datos)
+        } catch (error) {
+            console.log(error);
         }
     }
-    llenarDatos();
-};
+   
+
+}
+
+export default Controlador;
+
+
