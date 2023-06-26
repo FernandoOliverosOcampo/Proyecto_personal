@@ -90,8 +90,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-#btn_enviar,
- #btn_volver{
+button{
     margin:20px;
     height: 6.5vh;
     width: 7.5vw;

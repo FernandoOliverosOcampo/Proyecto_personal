@@ -24,7 +24,7 @@ btnenviar.addEventListener('click', () => {
 
   swalWithBootstrapButtons.fire({
     title: '¿Estás seguro?',
-    text: "Deseas ingresar los datos a la BD",
+    text: 'Deseas ingresar los datos a la BD',
     icon: 'warning',
     showCancelButton: true,
     confirmButtonText: 'Aceptar',
@@ -37,6 +37,16 @@ btnenviar.addEventListener('click', () => {
       const usuarioFormulario = document.getElementById('usuario').value;
       const contraseñaFormulario = document.getElementById('contraseña').value;
 
+      // Verificar campos vacíos
+      if (nombreFormulario === '' || apellidoFormulario === '' || usuarioFormulario === '' || contraseñaFormulario === '') {
+        Swal.fire({
+          icon: 'error',
+          title: 'Campos vacíos',
+          text: 'Por favor, completa todos los campos.',
+        });
+        return;
+      }
+
       Controlador.contenidoAgregar(nombreFormulario, apellidoFormulario, usuarioFormulario, contraseñaFormulario);
 
       // Limpiar los valores de los inputs
@@ -44,18 +54,17 @@ btnenviar.addEventListener('click', () => {
       document.getElementById('apellido').value = '';
       document.getElementById('usuario').value = '';
       document.getElementById('contraseña').value = '';
-    } else if (
-      result.dismiss === Swal.DismissReason.cancel
-    ) {
+
+   
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
       swalWithBootstrapButtons.fire(
         'Cancelado',
         'No se ha ingresado nada',
         'error'
-      )
+      );
     }
-  })
-
-})
+  });
+});
 
 const Vista = {
 
