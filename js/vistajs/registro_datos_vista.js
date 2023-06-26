@@ -4,16 +4,16 @@ import Controlador from "../controladorjs/registro-datos-controlador.js";
 //fin importaciones
 const inputField = document.querySelector('.input-field');
 const inputLabel = document.querySelector('.input-label');
+
+//dom
 const btnvolver = document.getElementById('btn_volver')
 btnvolver.addEventListener('click', () => {
   window.location.href = "../index.html";
 })
-//dom
+
 const btnenviar = document.getElementById('btn_enviar');
 
 btnenviar.addEventListener('click', () => {
-  console.log("estoy haciendo click")
-
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: 'btn btn-success',
@@ -36,15 +36,20 @@ btnenviar.addEventListener('click', () => {
       const apellidoFormulario = document.getElementById('apellido').value;
       const usuarioFormulario = document.getElementById('usuario').value;
       const contraseñaFormulario = document.getElementById('contraseña').value;
-      //Controlador.insertarImagenes(imagenes)
+
       Controlador.contenidoAgregar(nombreFormulario, apellidoFormulario, usuarioFormulario, contraseñaFormulario);
 
+      // Limpiar los valores de los inputs
+      document.getElementById('nombre').value = '';
+      document.getElementById('apellido').value = '';
+      document.getElementById('usuario').value = '';
+      document.getElementById('contraseña').value = '';
     } else if (
       result.dismiss === Swal.DismissReason.cancel
     ) {
       swalWithBootstrapButtons.fire(
         'Cancelado',
-        'No se ha eliminado nada',
+        'No se ha ingresado nada',
         'error'
       )
     }
