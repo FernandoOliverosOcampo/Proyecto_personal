@@ -71,7 +71,7 @@ body{
     transform: translateY(-50%);
     transition: 0.2s ease-out;
     color: #999;
-    background-color: white;
+    background-color: transparent;
     padding: 0 5px;
 
   }
@@ -81,7 +81,7 @@ body{
     top: -10px;
     transform: translateY(0%);
     font-size: 12px;
-    color: #333;
+    color: transparent;
     font-weight: bold;
     
   }

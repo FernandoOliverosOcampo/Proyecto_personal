@@ -6,8 +6,8 @@ const Modelo ={
         const datos_insertar = {
             nombre: nombreFormulario,
             apellido:apellidoFormulario,
-            usuario:usuarioFormulario,
-            contraseña: contraseñaFormulario,
+            email:usuarioFormulario,
+            password: contraseñaFormulario,
         }
         const res = await axios({
             method:'POST',
