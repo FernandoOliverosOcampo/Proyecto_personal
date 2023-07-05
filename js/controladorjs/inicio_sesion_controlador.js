@@ -7,15 +7,17 @@ const Controlador = {
 
     try {
       const respuesta = await Modelo.inicioSesion(email, password);
-      if (respuesta.status >= 200 && respuesta.status < 300) {
-        Vista.mostrarMensajeSatisfactorio();
-        Vista.limpiarCampos();
-        Vista.redirigirAIndex();
-      } else {
-        Vista.mostrarMensajeError();
-      }
+      // if (respuesta.status >= 200 && respuesta.status < 300) {
+      //   Vista.mostrarMensajeSatisfactorio();
+      //   Vista.limpiarCampos();
+      //   Vista.redirigirAIndex();
+      //   console.log(respuesta)
+      // } else {
+      //   Vista.mostrarMensajeError();
+      // }
+      console.log(respuesta)
     } catch (error) {
-      Vista.mostrarMensajeError();
+      console.log(error)
     }
   }
 };

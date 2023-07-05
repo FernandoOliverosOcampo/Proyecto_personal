@@ -34,8 +34,8 @@ btnenviar.addEventListener('click', () => {
     if (result.isConfirmed) {
       const nombreFormulario = document.getElementById('nombre').value;
       const apellidoFormulario = document.getElementById('apellido').value;
-      const usuarioFormulario = document.getElementById('usuario').value;
-      const contraseñaFormulario = document.getElementById('contraseña').value;
+      const usuarioFormulario = document.getElementById('email').value;
+      const contraseñaFormulario = document.getElementById('password').value;
 
       // Verificar campos vacíos
       if (nombreFormulario === '' || apellidoFormulario === '' || usuarioFormulario === '' || contraseñaFormulario === '') {
@@ -52,8 +52,8 @@ btnenviar.addEventListener('click', () => {
       // Limpiar los valores de los inputs
       document.getElementById('nombre').value = '';
       document.getElementById('apellido').value = '';
-      document.getElementById('usuario').value = '';
-      document.getElementById('contraseña').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('password').value = '';
 
    
     } else if (result.dismiss === Swal.DismissReason.cancel) {
